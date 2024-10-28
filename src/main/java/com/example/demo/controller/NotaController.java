@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/controlador/NotaController.java
 package com.example.demo.controller;
 
 import com.example.demo.modelo.Nota;

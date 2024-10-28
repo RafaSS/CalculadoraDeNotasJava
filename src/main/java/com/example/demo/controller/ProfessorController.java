@@ -1,5 +1,4 @@
-// src/main/java/com/example/demo/controlador/ProfessorController.java
-package com.example.demo.controlador;
+package com.example.demo.controller;
 
 import com.example.demo.modelo.Professor;
 import com.example.demo.servico.ProfessorService;

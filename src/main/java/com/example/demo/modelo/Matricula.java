@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/modelo/Matricula.java
 package com.example.demo.modelo;
 
 import jakarta.persistence.*;

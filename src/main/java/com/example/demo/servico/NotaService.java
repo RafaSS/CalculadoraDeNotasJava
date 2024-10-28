@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/servico/NotaService.java
 package com.example.demo.servico;
 
 import com.example.demo.modelo.Nota;

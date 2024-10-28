@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/repository/NotaRepository.java
 package com.example.demo.repository;
 
 import com.example.demo.modelo.Nota;
