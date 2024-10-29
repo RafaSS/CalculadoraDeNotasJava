@@ -7,5 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MateriaRepository extends JpaRepository<Materia, Long> {
     Materia findById(long id);
-    Materia save(Materia materia);
 }
