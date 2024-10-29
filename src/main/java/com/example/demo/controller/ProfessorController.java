@@ -15,7 +15,7 @@ public class ProfessorController {
 
     @PostMapping("/criar")
     public ResponseEntity<Professor> criar(@RequestBody Professor professor) {
-        return ResponseEntity.ok(professorService.criar(professor));
+        return ResponseEntity.ok(professorService.save(professor));
     }
 
     @GetMapping("/{id}")

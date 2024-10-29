@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProfessorRepository extends JpaRepository<Professor, Long> {
     Professor findById(long id);
-    Professor criar(Professor professor);
+    Professor save(Professor professor);
 }

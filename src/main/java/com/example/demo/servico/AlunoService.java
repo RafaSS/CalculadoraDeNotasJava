@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 public class AlunoService {
     private final AlunoRepository alunoRepository;
 
-    public Aluno criar(Aluno aluno) {
+    public Aluno create(Aluno aluno) {
         return alunoRepository.save(aluno);
     }
 
-    public Aluno buscar(Long id) {
+    public Aluno findById(Long id) {
         return alunoRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Aluno não encontrado"));
     }

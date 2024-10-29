@@ -14,7 +14,7 @@ public class MatriculaService {
     private final MateriaService materiaService;
 
     public Matricula matricular(Long alunoId, Long materiaId) {
-        var aluno = alunoService.buscar(alunoId);
+        var aluno = alunoService.findById(alunoId);
         var materia = materiaService.buscar(materiaId);
 
         var matricula = Matricula.builder()

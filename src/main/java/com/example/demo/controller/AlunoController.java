@@ -14,12 +14,12 @@ public class AlunoController {
     private final AlunoService alunoService;
 
     @PostMapping
-    public ResponseEntity<Aluno> criar(@RequestBody Aluno aluno) {
-        return ResponseEntity.ok(alunoService.criar(aluno));
+    public ResponseEntity<Aluno> create(@RequestBody Aluno aluno) {
+        return ResponseEntity.ok(alunoService.create(aluno));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Aluno> buscar(@PathVariable Long id) {
-        return ResponseEntity.ok(alunoService.buscar(id));
+    public ResponseEntity<Aluno> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(alunoService.findById(id));
     }
 }

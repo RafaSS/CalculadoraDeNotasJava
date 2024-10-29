@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class ProfessorService {
     private final ProfessorRepository professorRepository;
 
-    public Professor criar(Professor professor) {
+    public Professor save(Professor professor) {
         return professorRepository.save(professor);
     }
 
