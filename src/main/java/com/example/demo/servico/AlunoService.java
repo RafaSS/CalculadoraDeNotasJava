@@ -5,10 +5,9 @@ import com.example.demo.exception.BusinessException;
 import com.example.demo.modelo.Aluno;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+@RequiredArgsConstructor
 
 @Service
-@RequiredArgsConstructor
 public class AlunoService {
     private final AlunoRepository alunoRepository;
 
