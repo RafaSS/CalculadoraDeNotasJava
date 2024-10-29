@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="513bdfd7-3782-405d-92a4-7c4af0f6abbe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AlunoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AlunoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/AlunoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/AlunoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +129,7 @@
       <workItem from="1730114388681" duration="148000" />
       <workItem from="1730114556882" duration="12981000" />
       <workItem from="1730202181187" duration="10363000" />
-      <workItem from="1730225242233" duration="3307000" />
+      <workItem from="1730225242233" duration="3980000" />
     </task>
     <servers />
   </component>
