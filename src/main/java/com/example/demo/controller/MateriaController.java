@@ -22,6 +22,6 @@ public class MateriaController {
 
         @GetMapping("/{id}")
         public ResponseEntity<Materia> buscar(@PathVariable Long id) {
-            return ResponseEntity.ok(materiaService.buscar(id));
+            return ResponseEntity.ok(materiaService.findById(id));
         }
 }

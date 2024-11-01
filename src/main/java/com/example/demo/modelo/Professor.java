@@ -18,6 +18,6 @@ public class Professor {
     private Long id;
     private String nome;
 
-    @OneToMany(mappedBy = "professor")
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private Set<Materia> materias;
 }

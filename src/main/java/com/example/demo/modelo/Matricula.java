@@ -16,11 +16,34 @@ public class Matricula {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "aluno_id")
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "aluno_id", updatable = false, insertable = false)
     private Aluno aluno;
 
     @ManyToOne
-    @JoinColumn(name = "materia_id")
+    @JoinColumn(name = "materia_id", updatable = false, insertable = false)
     private Materia materia;
+
+
+    @Override
+    public String toString() {
+        return "Matricula{" +
+                "id=" + id +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Matricula)) return false;
+        return id != null && id.equals(((Matricula) o).id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+
 }

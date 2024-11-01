@@ -4,6 +4,7 @@ package com.example.demo.servico;
 import com.example.demo.exception.BusinessException;
 
 import com.example.demo.modelo.Materia;
+import com.example.demo.modelo.Professor;
 import com.example.demo.repository.MateriaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,12 +17,20 @@ import org.springframework.stereotype.Service;
 
 public class MateriaService {
     private final MateriaRepository materiaRepository;
+    private final ProfessorService professorService;
 
     public Materia criar(Materia materia) {
+
+       Professor professor = professorService.buscar(materia.getProfessor().getId());
+        if (professor == null) {
+            throw new BusinessException("Professor não encontrado" + materia);
+        }
+        materia.setProfessor(professor);
+        professor.getMaterias().add(materia);
         return materiaRepository.save(materia);
     }
 
-    public Materia buscar(Long id) {
+    public Materia findById(Long id) {
         return materiaRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Materia não encontrada"));
     }

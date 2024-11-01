@@ -23,4 +23,27 @@ public class Nota {
 
     private Double valor;
     private LocalDateTime dataLancamento;
+
+    @Override
+    public String toString() {
+        return "Nota{" +
+                "id=" + id +
+                ", valor=" + valor +
+                ", dataLancamento=" + dataLancamento +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Nota)) return false;
+        return id != null && id.equals(((Nota) o).id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+
 }

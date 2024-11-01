@@ -34,8 +34,7 @@ class MateriaControllerTest {
 
     @Test
     void deveCriarMateria() throws Exception {
-        // Criar Materia
-        Professor professor = new Professor(null, "Maria", null);
+        Professor professor = new Professor(1L, "Maria", null);
         Materia materia = new Materia(null, "Matematica", professor, null);
         String materiaJson = objectMapper.writeValueAsString(materia);
 
@@ -43,20 +42,49 @@ class MateriaControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(materiaJson))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome").value("Maria"));
+                .andExpect(jsonPath("$.nome").value("Matematica"));
     }
 
-//    @Test
-//    void deveBuscarMateria() throws Exception {
-//        // Buscar Aluno
-//        Professor professor = new Professor(null, "Maria", null);
-//        Materia materia = new Materia(null, "Matematica", professor, null);
-//         materiaRepository.save(materia).wait();
-//
-//        mockMvc.perform(get("/api/materia/" + materia.getId()))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.nome").value("Matematica"));
-//    }
+    @Test
+    void deveBuscarMateria() throws Exception {
+        Professor professor = new Professor(null, "Maria", null);
+        Materia materia = new Materia(null, "Matematica", professor, null);
+        materiaRepository.save(materia);
+
+        mockMvc.perform(get("/api/materia/" + materia.getId()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nome").value("Matematica"));
+    }
+
+    @Test
+    void deveRetornarNotFoundAoBuscarMateriaInexistente() throws Exception {
+        mockMvc.perform(get("/api/materia/1"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void deveRetornarBadRequestAoCriarMateriaComProfessorInexistente() throws Exception {
+        Professor professor = new Professor(1L, "Maria", null);
+        Materia materia = new Materia(null, "Matematica", professor, null);
+        String materiaJson = objectMapper.writeValueAsString(materia);
+
+        mockMvc.perform(post("/api/materia")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(materiaJson))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void deveRetornarBadRequestAoCriarMateriaComProfessorNulo() throws Exception {
+        Materia materia = new Materia(null, "Matematica", null, null);
+        String materiaJson = objectMapper.writeValueAsString(materia);
+
+        mockMvc.perform(post("/api/materia")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(materiaJson))
+                .andExpect(status().isBadRequest());
+    }
+
 
 
 }
