@@ -22,8 +22,8 @@ public class MateriaService {
     public Materia criar(Materia materia) {
 
        Professor professor = professorService.buscar(materia.getProfessor().getId());
-        if (professor == null) {
-            throw new BusinessException("Professor não encontrado" + materia);
+        if (materia.getProfessor() == null || materia.getProfessor().getId() == null) {
+            throw new BusinessException("Professor é obrigatório para criar uma matéria.");
         }
         materia.setProfessor(professor);
         professor.getMaterias().add(materia);
@@ -31,6 +31,7 @@ public class MateriaService {
     }
 
     public Materia findById(Long id) {
+
         return materiaRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Materia não encontrada"));
     }

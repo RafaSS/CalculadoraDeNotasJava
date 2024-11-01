@@ -20,7 +20,7 @@ public class Materia {
     private Long id;
     private String nome;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "professor_id")
     private Professor professor;
 
