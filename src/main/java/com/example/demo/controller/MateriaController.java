@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.exception.BusinessException;
 import com.example.demo.modelo.Materia;
 import com.example.demo.servico.MateriaService;
 import lombok.RequiredArgsConstructor;
@@ -17,11 +18,19 @@ public class MateriaController {
 
         @PostMapping
         public ResponseEntity<Materia> criar(@RequestBody Materia materia) {
-            return ResponseEntity.ok(materiaService.criar(materia));
+            try {
+                return ResponseEntity.ok(materiaService.criar(materia));
+            } catch (BusinessException e) {
+                return ResponseEntity.status(400).build();
+            }
         }
 
         @GetMapping("/{id}")
         public ResponseEntity<Materia> buscar(@PathVariable Long id) {
-            return ResponseEntity.ok(materiaService.findById(id));
+            try {
+                return ResponseEntity.ok(materiaService.findById(id));
+            } catch (BusinessException e) {
+                return ResponseEntity.status(404).build();
+            }
         }
 }

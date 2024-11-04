@@ -17,20 +17,21 @@ public class MatriculaService {
     private final MateriaService materiaService;
 
     @Transactional
-    public Matricula matricular(Long alunoId, Long materiaId) {
-        Aluno aluno = alunoService.findById(alunoId);
-        Materia materia = materiaService.findById(materiaId);
+    public Matricula matricular(Matricula matricula) {
+        Aluno aluno = alunoService.findById(matricula.getAluno().getId());
+        Materia materia = materiaService.findById(matricula.getMateria().getId());
+        System.out.println("Aluno: " + aluno);
 
-        Matricula matricula = Matricula.builder()
+        Matricula matricular = Matricula.builder()
                 .aluno(aluno)
                 .materia(materia)
                 .build();
 
 
-        aluno.getMatriculas().add(matricula);
-        materia.getMatriculas().add(matricula);
+        aluno.getMatriculas().add(matricular);
+        materia.getMatriculas().add(matricular);
 
-        return matriculaRepository.save(matricula);
+        return matriculaRepository.save(matricular);
     }
     public Matricula buscar(Long id) {
         return matriculaRepository.findById(id)

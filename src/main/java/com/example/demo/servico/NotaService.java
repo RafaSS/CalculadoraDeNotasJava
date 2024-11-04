@@ -1,11 +1,12 @@
 package com.example.demo.servico;
 
+import com.example.demo.modelo.Matricula;
 import com.example.demo.modelo.Nota;
+import com.example.demo.modelo.Professor;
 import com.example.demo.repository.NotaRepository;
 import com.example.demo.exception.BusinessException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -16,19 +17,16 @@ public class NotaService {
     private final MatriculaService matriculaService;
     private final ProfessorService professorService;
 
-    public Nota lancarNota(Long professorId, Long matriculaId, Double valor) {
-        var professor = professorService.buscar(professorId);
-        var matricula = matriculaService.buscar(matriculaId);
+    public Nota lancarNota(Nota nota) {
+        var matricula = matriculaService.buscar(nota.getMatricula().getId());
+        System.out.println("Matricula: " + matricula);
+        var professor = professorService.buscar(matricula.getMateria().getProfessor().getId());
 
-        if (!matricula.getMateria().getProfessor().equals(professor)) {
-            throw new BusinessException("Professor não autorizado para esta matéria");
+        if (!professor.getId().equals(nota.getMatricula().getMateria().getProfessor().getId())) {
+            throw new BusinessException("Professor não é responsável pela matéria da matrícula");
         }
 
-        var nota = Nota.builder()
-                .matricula(matricula)
-                .valor(valor)
-                .dataLancamento(LocalDateTime.now())
-                .build();
+
 
         return notaRepository.save(nota);
     }

@@ -82,14 +82,13 @@ class MateriaControllerTest {
     @Test
     void deveRetornarBadRequestAoCriarMateriaComProfessorInexistente() throws Exception {
         Professor professorInexistente = new Professor(99L, "Inexistente", null);
-        Materia materia = new Materia(null, "Matematica", professorInexistente, null);
+        Materia materia = new Materia(1L, "Inexistente", professorInexistente, null);
         String materiaJson = objectMapper.writeValueAsString(materia);
 
         mockMvc.perform(post("/api/materia")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(materiaJson))
-                .andExpect(status().isNotFound())  // Espera que o status seja 404 para professor inexistente
-                .andExpect(result -> assertTrue(result.getResolvedException() instanceof BusinessException));
+                .andExpect(status().isBadRequest());
     }
 
 

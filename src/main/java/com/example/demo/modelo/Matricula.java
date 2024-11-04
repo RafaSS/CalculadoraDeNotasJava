@@ -17,11 +17,11 @@ public class Matricula {
     private Long id;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "aluno_id", updatable = false, insertable = false)
     private Aluno aluno;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "materia_id", updatable = false, insertable = false)
     private Materia materia;
 

@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.exception.BusinessException;
+import com.example.demo.modelo.Matricula;
 import com.example.demo.modelo.Nota;
 import com.example.demo.servico.NotaService;
 import lombok.RequiredArgsConstructor;
@@ -15,14 +17,21 @@ public class NotaController {
 
     @PostMapping("/lancar")
     public ResponseEntity<Nota> lancarNota(
-            @RequestParam Long professorId,
-            @RequestParam Long matriculaId,
-            @RequestBody Double valor) {
-        return ResponseEntity.ok(notaService.lancarNota(professorId, matriculaId, valor));
+            @RequestBody Nota nota) {
+
+        try {
+            return ResponseEntity.ok(notaService.lancarNota(nota));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @GetMapping("/media/{matriculaId}")
     public ResponseEntity<Double> calcularMedia(@PathVariable Long matriculaId) {
-        return ResponseEntity.ok(notaService.calcularMedia(matriculaId));
+        try{
+            return ResponseEntity.ok(notaService.calcularMedia(matriculaId));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }

@@ -22,14 +22,12 @@ public class Nota {
     private Matricula matricula;
 
     private Double valor;
-    private LocalDateTime dataLancamento;
 
     @Override
     public String toString() {
         return "Nota{" +
                 "id=" + id +
                 ", valor=" + valor +
-                ", dataLancamento=" + dataLancamento +
                 '}';
     }
 

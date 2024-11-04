@@ -20,11 +20,10 @@ public class MateriaService {
     private final ProfessorService professorService;
 
     public Materia criar(Materia materia) {
-
-       Professor professor = professorService.buscar(materia.getProfessor().getId());
-        if (materia.getProfessor() == null || materia.getProfessor().getId() == null) {
+        if (materia.getProfessor() == null ) {
             throw new BusinessException("Professor é obrigatório para criar uma matéria.");
         }
+        Professor professor = professorService.buscar(materia.getProfessor().getId());
         materia.setProfessor(professor);
         professor.getMaterias().add(materia);
         return materiaRepository.save(materia);
