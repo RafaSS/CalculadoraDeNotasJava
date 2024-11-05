@@ -21,6 +21,8 @@ import com.example.demo.modelo.Professor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 
+import java.util.Set;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -54,16 +56,26 @@ public class MatriculaControllerTest {
 
     @BeforeEach
     void setup() {
-        materiaRepository.deleteAll();
+        matriculaRepository.deleteAll();
         professorRepository.deleteAll();
+
+        materiaRepository.deleteAll();
+
         alunoRepository.deleteAll();
 
-        aluno = new Aluno(1L, "Joao", null);
-        aluno = alunoRepository.save(aluno);
+
+        aluno = new Aluno(null, "Joao", null);
+        alunoRepository.save(aluno);
+
         Professor professor = new Professor(null, "Maria", null);
-        professor = professorRepository.save(professor);
-        materia = new Materia(1L, "Matematica", professor, null);
-        materia = materiaRepository.save(materia);
+
+        materia = new Materia(null, "Matematica", professor, null);
+
+        professor.setMaterias(Set.of(materia));
+        professorRepository.save(professor);
+        materiaRepository.save(materia);
+
+
     }
 
     @Test
@@ -122,5 +134,33 @@ public class MatriculaControllerTest {
                         .content(matriculaJson))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    void deveDeletarMatricula() throws Exception {
+        Matricula matricula = new Matricula(null, aluno, materia);
+        matriculaRepository.save(matricula);
+
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/matricula/" + matricula.getId()))
+                .andExpect(status().isOk());
+    }
+
+//    @Test
+//    void deveAtualizarMatricula() throws Exception {
+//        Matricula matricula = new Matricula(null, aluno, materia);
+//        matriculaRepository.save(matricula);
+//
+//        Aluno aluno = new Aluno(3L, "Maria", Set.of(matricula));
+//        alunoRepository.save(aluno);
+//
+//        matricula.setAluno(aluno);
+//
+//        String matriculaJson = objectMapper.writeValueAsString(matricula);
+//
+//        mockMvc.perform(MockMvcRequestBuilders.put("/api/matricula/" + matricula.getId())
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(matriculaJson));
+////                .andExpect(status().isOk())
+////                .andExpect(jsonPath("$.aluno.nome").value("Maria"));
+//    }
 
 }

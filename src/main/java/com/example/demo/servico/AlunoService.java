@@ -12,11 +12,25 @@ public class AlunoService {
     private final AlunoRepository alunoRepository;
 
     public Aluno create(Aluno aluno) {
+        if(aluno.getNome() == null || aluno.getNome().isEmpty()) {
+            throw new BusinessException("Nome do aluno é obrigatório");
+        }
         return alunoRepository.save(aluno);
     }
 
     public Aluno findById(Long id) {
         return alunoRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Aluno não encontrado"));
+    }
+
+    public Aluno update(Long id, Aluno aluno) {
+        Aluno alunoSalvo = findById(id);
+        aluno.setId(alunoSalvo.getId());
+        return alunoRepository.save(aluno);
+    }
+
+    public void delete(Long id) {
+        Aluno aluno = findById(id);
+        alunoRepository.delete(aluno);
     }
 }

@@ -20,7 +20,7 @@ public class MatriculaService {
     public Matricula matricular(Matricula matricula) {
         Aluno aluno = alunoService.findById(matricula.getAluno().getId());
         Materia materia = materiaService.findById(matricula.getMateria().getId());
-        System.out.println("Aluno: " + aluno);
+        System.out.println(aluno+"aluno1::");
 
         Matricula matricular = Matricula.builder()
                 .aluno(aluno)
@@ -33,8 +33,32 @@ public class MatriculaService {
 
         return matriculaRepository.save(matricular);
     }
+
     public Matricula buscar(Long id) {
         return matriculaRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Matricula não encontrada"));
+    }
+
+    public Matricula atualizar(Long id, Matricula matricula) {
+        Aluno aluno = alunoService.findById(matricula.getAluno().getId());
+        System.out.println(aluno+"aluno::");
+        Materia materia = materiaService.findById(matricula.getMateria().getId());
+
+        if(!matriculaRepository.existsById(id)) {
+            throw new BusinessException("Matricula não encontrada");
+        }
+
+        Matricula matricular = Matricula.builder()
+                .id(id)
+                .aluno(aluno)
+                .materia(materia)
+                .build();
+        return matriculaRepository.save(matricular);
+
+    }
+
+    public void deletar(Long id) {
+        Matricula matricula = buscar(id);
+        matriculaRepository.delete(matricula);
     }
 }

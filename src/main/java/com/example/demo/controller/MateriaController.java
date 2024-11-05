@@ -33,4 +33,23 @@ public class MateriaController {
                 return ResponseEntity.status(404).build();
             }
         }
+
+        @PutMapping("/{id}")
+        public ResponseEntity<Materia> atualizar(@PathVariable Long id, @RequestBody Materia materia) {
+            try {
+                return ResponseEntity.ok(materiaService.atualizar(id, materia));
+            } catch (BusinessException e) {
+                return ResponseEntity.status(404).build();
+            }
+        }
+
+        @DeleteMapping("/{id}")
+        public ResponseEntity<Materia> deletar(@PathVariable Long id) {
+            try {
+                materiaService.deletar(id);
+                return ResponseEntity.ok().build();
+            } catch (BusinessException e) {
+                return ResponseEntity.status(404).build();
+            }
+        }
 }

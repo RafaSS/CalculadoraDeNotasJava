@@ -27,11 +27,14 @@ class AlunoControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
+    @BeforeEach
+    void setup() {
+        alunoRepository.deleteAll();
+    }
 
 
     @Test
     void deveCriarAluno() throws Exception {
-        // Criar Aluno
         Aluno aluno = new Aluno(null, "Maria", null);
         String alunoJson = objectMapper.writeValueAsString(aluno);
 
@@ -44,7 +47,6 @@ class AlunoControllerTest {
 
     @Test
     void deveBuscarAluno() throws Exception {
-        // Buscar Aluno
         Aluno aluno = new Aluno(null, "Maria", null);
         alunoRepository.save(aluno);
 
@@ -52,6 +54,33 @@ class AlunoControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.nome").value("Maria"));
     }
+
+    @Test
+    void deveAtualizarAluno() throws Exception {
+        Aluno aluno = new Aluno(null, "Maria", null);
+        alunoRepository.save(aluno);
+
+        aluno.setNome("João");
+        String alunoJson = objectMapper.writeValueAsString(aluno);
+
+        mockMvc.perform(put("/api/aluno/" + aluno.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(alunoJson))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nome").value("João"));
+    }
+
+    @Test
+    void deveDeletarAluno() throws Exception {
+        Aluno aluno = new Aluno(null, "Maria", null);
+        alunoRepository.save(aluno);
+
+        mockMvc.perform(delete("/api/aluno/" + aluno.getId()))
+                .andExpect(status().isOk());
+    }
+
+
+
 
 
 }

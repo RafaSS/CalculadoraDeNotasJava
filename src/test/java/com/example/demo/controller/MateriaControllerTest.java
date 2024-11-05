@@ -4,6 +4,7 @@ import com.example.demo.exception.BusinessException;
 import com.example.demo.modelo.Materia;
 import com.example.demo.modelo.Professor;
 import com.example.demo.repository.MateriaRepository;
+import com.example.demo.repository.MatriculaRepository;
 import com.example.demo.repository.ProfessorRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,20 +39,26 @@ class MateriaControllerTest {
     private ObjectMapper objectMapper;
 
     private Professor professor;
+    @Autowired
+    private MatriculaRepository matriculaRepository;
 
     @BeforeEach
     void setup() {
+        matriculaRepository.deleteAll();
         materiaRepository.deleteAll();
         professorRepository.deleteAll();
 
 
+
         professor = new Professor(null, "Maria", null);
-        professor = professorRepository.save(professor);
+
     }
 
     @Test
     void deveCriarMateria() throws Exception {
         Materia materia = new Materia(null, "Matematica", professor, null);
+        professor.setMaterias(Set.of(materia));
+        professor = professorRepository.save(professor);
         String materiaJson = objectMapper.writeValueAsString(materia);
 
         mockMvc.perform(post("/api/materia")
@@ -65,6 +72,8 @@ class MateriaControllerTest {
     @Test
     void deveBuscarMateria() throws Exception {
         Materia materia = new Materia(null, "Matematica", professor, null);
+        professor.setMaterias(Set.of(materia));
+        professor = professorRepository.save(professor);
         materia = materiaRepository.save(materia);
 
         mockMvc.perform(get("/api/materia/" + materia.getId()))
@@ -101,5 +110,34 @@ class MateriaControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(materiaJson))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void deveAtualizarMateria() throws Exception {
+        Materia materia = new Materia(null, "Matematica", professor, null);
+        professor.setMaterias(Set.of(materia));
+        professor = professorRepository.save(professor);
+        materia = materiaRepository.save(materia);
+
+        materia.setNome("Portugues");
+        String materiaJson = objectMapper.writeValueAsString(materia);
+
+        mockMvc.perform(put("/api/materia/" + materia.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(materiaJson))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nome").value("Portugues"))
+                .andExpect(jsonPath("$.professor.id").value(professor.getId()));
+    }
+
+    @Test
+    void deveDeletarMateria() throws Exception {
+        Materia materia = new Materia(null, "Matematica", professor, null);
+        professor.setMaterias(Set.of(materia));
+        professor = professorRepository.save(professor);
+        materia = materiaRepository.save(materia);
+
+        mockMvc.perform(delete("/api/materia/" + materia.getId()))
+                .andExpect(status().isOk());
     }
 }

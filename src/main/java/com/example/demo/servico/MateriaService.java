@@ -23,9 +23,13 @@ public class MateriaService {
         if (materia.getProfessor() == null ) {
             throw new BusinessException("Professor é obrigatório para criar uma matéria.");
         }
+        System.out.println(professorService+"id do professor");
         Professor professor = professorService.buscar(materia.getProfessor().getId());
-        materia.setProfessor(professor);
+        if (professor == null) {
+            throw new BusinessException("Professor não encontrado.");
+        }
         professor.getMaterias().add(materia);
+        professorService.atualizar(professor.getId(), professor);
         return materiaRepository.save(materia);
     }
 
@@ -33,6 +37,17 @@ public class MateriaService {
 
         return materiaRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Materia não encontrada"));
+    }
+
+    public Materia atualizar(Long id, Materia materia) {
+        Materia materiaSalva = findById(id);
+        materia.setId(materiaSalva.getId());
+        return materiaRepository.save(materia);
+    }
+
+    public void deletar(Long id) {
+        Materia materia = findById(id);
+        materiaRepository.delete(materia);
     }
 
 

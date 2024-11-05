@@ -22,4 +22,15 @@ public class AlunoController {
     public ResponseEntity<Aluno> findById(@PathVariable Long id) {
         return ResponseEntity.ok(alunoService.findById(id));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Aluno> update(@PathVariable Long id, @RequestBody Aluno aluno) {
+        return ResponseEntity.ok(alunoService.update(id, aluno));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Aluno> delete(@PathVariable Long id) {
+        alunoService.delete(id);
+        return ResponseEntity.ok().build();
+    }
 }

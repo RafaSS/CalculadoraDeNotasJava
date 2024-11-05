@@ -33,4 +33,23 @@ public class MatriculaController {
             return ResponseEntity.status(404).build();
         }
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Matricula> atualizar(@PathVariable Long id, @RequestBody Matricula matricula) {
+        try {
+            return ResponseEntity.ok(matriculaService.atualizar(id, matricula));
+        } catch (BusinessException e) {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Matricula> deletar(@PathVariable Long id) {
+        try {
+            matriculaService.deletar(id);
+            return ResponseEntity.ok().build();
+        } catch (BusinessException e) {
+            return ResponseEntity.status(404).build();
+        }
+    }
 }

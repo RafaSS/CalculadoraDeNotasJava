@@ -12,11 +12,25 @@ public class ProfessorService {
     private final ProfessorRepository professorRepository;
 
     public Professor save(Professor professor) {
+        if(professor.getNome() == null || professor.getNome().isEmpty()) {
+            throw new BusinessException("Nome do professor é obrigatório");
+        }
         return professorRepository.save(professor);
     }
 
     public Professor buscar(Long id) {
         return professorRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Professor não encontrado"));
+    }
+
+    public Professor atualizar(Long id, Professor professor) {
+        Professor professorSalvo = buscar(id);
+        professor.setId(professorSalvo.getId());
+        return professorRepository.save(professor);
+    }
+
+    public void deletar(Long id) {
+        Professor professor = buscar(id);
+        professorRepository.delete(professor);
     }
 }

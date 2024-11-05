@@ -20,11 +20,11 @@ public class Materia {
     private Long id;
     private String nome;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "professor_id")
     private Professor professor;
 
-    @OneToMany(mappedBy = "materia", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @OneToMany(mappedBy = "materia", cascade = CascadeType.PERSIST)
     @JsonIgnore
     private Set<Matricula> matriculas = new HashSet<>();
 

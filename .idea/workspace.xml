@@ -6,19 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="513bdfd7-3782-405d-92a4-7c4af0f6abbe" name="Changes" comment="creat tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AlunoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AlunoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MateriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MateriaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MatriculaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MatriculaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/NotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/NotaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ProfessorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ProfessorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Materia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Matricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Matricula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Nota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Nota.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/AlunoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/MatriculaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/MatriculaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/AlunoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MateriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MateriaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/NotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/NotaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/ProfessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/ProfessorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/AlunoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/AlunoControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MateriaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MateriaControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MatriculaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MatriculaControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/NotaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/NotaControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/ProfessorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/ProfessorControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AlunoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AlunoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/MateriaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/MateriaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/ProfessorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/ProfessorServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,10 +86,35 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.AlunoControllerTest.criarAlunoComSucesso.executor": "Run",
+    "JUnit.AlunoControllerTest.deveAtualizarAluno.executor": "Run",
+    "JUnit.AlunoControllerTest.deveCriarAluno.executor": "Run",
+    "JUnit.MateriaControllerTest.deveAtualizarMateria.executor": "Run",
+    "JUnit.MateriaControllerTest.deveBuscarMateria.executor": "Run",
+    "JUnit.MateriaControllerTest.deveCriarMateria.executor": "Run",
+    "JUnit.MateriaControllerTest.deveDeletarMateria.executor": "Run",
     "JUnit.MateriaControllerTest.deveRetornarBadRequestAoCriarMateriaComProfessorInexistente.executor": "Debug",
-    "JUnit.MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente.executor": "Debug",
+    "JUnit.MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente.executor": "Run",
+    "JUnit.MateriaServiceTest.buscarMateriaPorId.executor": "Run",
+    "JUnit.MateriaServiceTest.criarMateriaComSucesso.executor": "Run",
+    "JUnit.MatriculaControllerTest.deveAtualizarMatricula.executor": "Run",
     "JUnit.MatriculaControllerTest.deveCriarMatricula.executor": "Run",
+    "JUnit.NotaControllerTest.deveAtualizarNota.executor": "Run",
+    "JUnit.NotaControllerTest.deveBuscarNota.executor": "Run",
+    "JUnit.NotaControllerTest.deveCalcularMedia.executor": "Run",
     "JUnit.NotaControllerTest.deveCriarNota.executor": "Run",
+    "JUnit.NotaControllerTest.deveDeletarNota.executor": "Run",
+    "JUnit.NotaControllerTest.deveRetornarBadRequest.executor": "Run",
+    "JUnit.NotaControllerTest.deveRetornarBadRequestNotaInvalida.executor": "Run",
+    "JUnit.NotaControllerTest.deveVerificarAprovacao.executor": "Run",
+    "JUnit.NotaControllerTest.deveVerificarReprovacao.executor": "Run",
+    "JUnit.NotaControllerTest.executor": "Run",
+    "JUnit.ProfessorControllerTest.deveAtualizarProfessor.executor": "Run",
+    "JUnit.ProfessorControllerTest.deveBuscarProfessor.executor": "Run",
+    "JUnit.ProfessorControllerTest.deveCriarProfessor.executor": "Run",
+    "JUnit.ProfessorControllerTest.deveCriarProfessorComMaterias.executor": "Run",
+    "JUnit.ProfessorServiceTest.criarProfessorComMateria.executor": "Run",
+    "JUnit.ProfessorServiceTest.criarProfessorComNomeNulo.executor": "Run",
+    "JUnit.ProfessorServiceTest.criarProfessorComSucesso.executor": "Run",
     "Maven.demo [clean].executor": "Run",
     "Maven.demo [compile].executor": "Run",
     "Maven.demo [deploy].executor": "Run",
@@ -120,82 +154,82 @@
       <recent name="C:\Users\admin\IdeaProjects\projeto01\src\main\java\org" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NotaControllerTest.deveCriarNota">
-    <configuration name="AlunoControllerTest.criarAlunoComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MateriaServiceTest.criarMateriaComSucesso">
+    <configuration name="MateriaServiceTest.buscarMateriaPorId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.controller.*" />
+          <option name="PATTERN" value="com.example.demo.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.AlunoControllerTest" />
-      <option name="METHOD_NAME" value="criarAlunoComSucesso" />
+      <option name="PACKAGE_NAME" value="com.example.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.MateriaServiceTest" />
+      <option name="METHOD_NAME" value="buscarMateriaPorId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MateriaControllerTest.deveRetornarBadRequestAoCriarMateriaComProfessorInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MateriaServiceTest.criarMateriaComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.controller.*" />
+          <option name="PATTERN" value="com.example.demo.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.MateriaControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornarBadRequestAoCriarMateriaComProfessorInexistente" />
+      <option name="PACKAGE_NAME" value="com.example.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.MateriaServiceTest" />
+      <option name="METHOD_NAME" value="criarMateriaComSucesso" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfessorServiceTest.criarProfessorComMateria" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.controller.*" />
+          <option name="PATTERN" value="com.example.demo.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.MateriaControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornarNotFoundAoBuscarMateriaInexistente" />
+      <option name="PACKAGE_NAME" value="com.example.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.ProfessorServiceTest" />
+      <option name="METHOD_NAME" value="criarProfessorComMateria" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatriculaControllerTest.deveCriarMatricula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfessorServiceTest.criarProfessorComNomeNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.controller.*" />
+          <option name="PATTERN" value="com.example.demo.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.MatriculaControllerTest" />
-      <option name="METHOD_NAME" value="deveCriarMatricula" />
+      <option name="PACKAGE_NAME" value="com.example.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.ProfessorServiceTest" />
+      <option name="METHOD_NAME" value="criarProfessorComNomeNulo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotaControllerTest.deveCriarNota" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfessorServiceTest.criarProfessorComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.controller.*" />
+          <option name="PATTERN" value="com.example.demo.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.NotaControllerTest" />
-      <option name="METHOD_NAME" value="deveCriarNota" />
+      <option name="PACKAGE_NAME" value="com.example.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.ProfessorServiceTest" />
+      <option name="METHOD_NAME" value="criarProfessorComSucesso" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,11 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NotaControllerTest.deveCriarNota" />
-        <item itemvalue="JUnit.MatriculaControllerTest.deveCriarMatricula" />
-        <item itemvalue="JUnit.MateriaControllerTest.deveRetornarBadRequestAoCriarMateriaComProfessorInexistente" />
-        <item itemvalue="JUnit.MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente" />
-        <item itemvalue="JUnit.AlunoControllerTest.criarAlunoComSucesso" />
+        <item itemvalue="JUnit.MateriaServiceTest.criarMateriaComSucesso" />
+        <item itemvalue="JUnit.MateriaServiceTest.buscarMateriaPorId" />
+        <item itemvalue="JUnit.ProfessorServiceTest.criarProfessorComNomeNulo" />
+        <item itemvalue="JUnit.ProfessorServiceTest.criarProfessorComSucesso" />
+        <item itemvalue="JUnit.ProfessorServiceTest.criarProfessorComMateria" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +278,9 @@
       <workItem from="1730372539075" duration="3879000" />
       <workItem from="1730401399459" duration="1931000" />
       <workItem from="1730719907901" duration="8712000" />
-      <workItem from="1730736003427" duration="15937000" />
+      <workItem from="1730736003427" duration="17625000" />
+      <workItem from="1730804425083" duration="10797000" />
+      <workItem from="1730822402659" duration="17056000" />
     </task>
     <servers />
   </component>

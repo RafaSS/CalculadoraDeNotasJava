@@ -13,13 +13,40 @@ public class ProfessorController {
 
     private final ProfessorService professorService;
 
-    @PostMapping("/criar")
+    @PostMapping
     public ResponseEntity<Professor> criar(@RequestBody Professor professor) {
-        return ResponseEntity.ok(professorService.save(professor));
+        try {
+            return ResponseEntity.ok(professorService.save(professor));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Professor> buscar(@PathVariable Long id) {
-        return ResponseEntity.ok(professorService.buscar(id));
+        try {
+            return ResponseEntity.ok(professorService.buscar(id));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Professor> atualizar(@PathVariable Long id, @RequestBody Professor professor) {
+        try {
+            return ResponseEntity.ok(professorService.atualizar(id, professor));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Professor> deletar(@PathVariable Long id) {
+        try {
+            professorService.deletar(id);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
