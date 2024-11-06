@@ -6,28 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="513bdfd7-3782-405d-92a4-7c4af0f6abbe" name="Changes" comment="creat tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AlunoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AlunoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MateriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MateriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MatriculaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/MatriculaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/NotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/NotaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ProfessorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ProfessorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Materia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Matricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Matricula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Nota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Nota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Professor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/MatriculaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/MatriculaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/AlunoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MateriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MateriaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/NotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/NotaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/ProfessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/ProfessorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/AlunoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/AlunoControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MateriaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MateriaControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MatriculaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/MatriculaControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/NotaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/NotaControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/ProfessorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/controller/ProfessorControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AlunoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AlunoServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/MateriaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/MateriaServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/ProfessorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/ProfessorServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/MatriculaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/MatriculaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/NotaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/NotaServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,8 +83,11 @@
     "JUnit.MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente.executor": "Run",
     "JUnit.MateriaServiceTest.buscarMateriaPorId.executor": "Run",
     "JUnit.MateriaServiceTest.criarMateriaComSucesso.executor": "Run",
+    "JUnit.MateriaServiceTest.executor": "Run",
     "JUnit.MatriculaControllerTest.deveAtualizarMatricula.executor": "Run",
     "JUnit.MatriculaControllerTest.deveCriarMatricula.executor": "Run",
+    "JUnit.MatriculaServiceTest.executor": "Run",
+    "JUnit.MatriculaServiceTest.matricularComSucesso.executor": "Run",
     "JUnit.NotaControllerTest.deveAtualizarNota.executor": "Run",
     "JUnit.NotaControllerTest.deveBuscarNota.executor": "Run",
     "JUnit.NotaControllerTest.deveCalcularMedia.executor": "Run",
@@ -108,6 +98,9 @@
     "JUnit.NotaControllerTest.deveVerificarAprovacao.executor": "Run",
     "JUnit.NotaControllerTest.deveVerificarReprovacao.executor": "Run",
     "JUnit.NotaControllerTest.executor": "Run",
+    "JUnit.NotaServiceTest.criarNotaComMatriculaNula.executor": "Run",
+    "JUnit.NotaServiceTest.criarNotaComSucesso.executor": "Run",
+    "JUnit.NotaServiceTest.executor": "Run",
     "JUnit.ProfessorControllerTest.deveAtualizarProfessor.executor": "Run",
     "JUnit.ProfessorControllerTest.deveBuscarProfessor.executor": "Run",
     "JUnit.ProfessorControllerTest.deveCriarProfessor.executor": "Run",
@@ -154,40 +147,40 @@
       <recent name="C:\Users\admin\IdeaProjects\projeto01\src\main\java\org" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MateriaServiceTest.criarMateriaComSucesso">
-    <configuration name="MateriaServiceTest.buscarMateriaPorId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.NotaServiceTest">
+    <configuration name="MatriculaControllerTest.deveAtualizarMatricula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.service.*" />
+          <option name="PATTERN" value="com.example.demo.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.MateriaServiceTest" />
-      <option name="METHOD_NAME" value="buscarMateriaPorId" />
+      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.MatriculaControllerTest" />
+      <option name="METHOD_NAME" value="deveAtualizarMatricula" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MateriaServiceTest.criarMateriaComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatriculaControllerTest.deveCriarMatricula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.service.*" />
+          <option name="PATTERN" value="com.example.demo.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.MateriaServiceTest" />
-      <option name="METHOD_NAME" value="criarMateriaComSucesso" />
+      <option name="PACKAGE_NAME" value="com.example.demo.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.controller.MatriculaControllerTest" />
+      <option name="METHOD_NAME" value="deveCriarMatricula" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfessorServiceTest.criarProfessorComMateria" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatriculaServiceTest.matricularComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -196,14 +189,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.demo.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.ProfessorServiceTest" />
-      <option name="METHOD_NAME" value="criarProfessorComMateria" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.MatriculaServiceTest" />
+      <option name="METHOD_NAME" value="matricularComSucesso" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfessorServiceTest.criarProfessorComNomeNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NotaServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -212,14 +205,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.demo.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.ProfessorServiceTest" />
-      <option name="METHOD_NAME" value="criarProfessorComNomeNulo" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.NotaServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfessorServiceTest.criarProfessorComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NotaServiceTest.criarNotaComMatriculaNula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -228,8 +220,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.demo.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.ProfessorServiceTest" />
-      <option name="METHOD_NAME" value="criarProfessorComSucesso" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.service.NotaServiceTest" />
+      <option name="METHOD_NAME" value="criarNotaComMatriculaNula" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -244,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MateriaServiceTest.criarMateriaComSucesso" />
-        <item itemvalue="JUnit.MateriaServiceTest.buscarMateriaPorId" />
-        <item itemvalue="JUnit.ProfessorServiceTest.criarProfessorComNomeNulo" />
-        <item itemvalue="JUnit.ProfessorServiceTest.criarProfessorComSucesso" />
-        <item itemvalue="JUnit.ProfessorServiceTest.criarProfessorComMateria" />
+        <item itemvalue="JUnit.NotaServiceTest" />
+        <item itemvalue="JUnit.NotaServiceTest.criarNotaComMatriculaNula" />
+        <item itemvalue="JUnit.MatriculaControllerTest.deveAtualizarMatricula" />
+        <item itemvalue="JUnit.MatriculaServiceTest.matricularComSucesso" />
+        <item itemvalue="JUnit.MatriculaControllerTest.deveCriarMatricula" />
       </list>
     </recent_temporary>
   </component>
@@ -281,6 +273,8 @@
       <workItem from="1730736003427" duration="17625000" />
       <workItem from="1730804425083" duration="10797000" />
       <workItem from="1730822402659" duration="17056000" />
+      <workItem from="1730890658850" duration="6768000" />
+      <workItem from="1730909327752" duration="9273000" />
     </task>
     <servers />
   </component>
@@ -337,6 +331,16 @@
           <properties class="org.springframework.data.mapping.PropertyReferenceException" package="org.springframework.data.mapping" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/demo/service/MateriaServiceTest.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">

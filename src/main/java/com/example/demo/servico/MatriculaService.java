@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Set;
+
 @Service
 @RequiredArgsConstructor
 public class MatriculaService {
@@ -18,20 +20,20 @@ public class MatriculaService {
 
     @Transactional
     public Matricula matricular(Matricula matricula) {
+
         Aluno aluno = alunoService.findById(matricula.getAluno().getId());
+
         Materia materia = materiaService.findById(matricula.getMateria().getId());
+        System.out.println("😎"+materia );
         System.out.println(aluno+"aluno1::");
 
-        Matricula matricular = Matricula.builder()
-                .aluno(aluno)
-                .materia(materia)
-                .build();
 
 
-        aluno.getMatriculas().add(matricular);
-        materia.getMatriculas().add(matricular);
 
-        return matriculaRepository.save(matricular);
+        alunoService.update(aluno.getId(), aluno);
+        materiaService.atualizar(materia.getId(), materia);
+
+        return matriculaRepository.save(matricula);
     }
 
     public Matricula buscar(Long id) {

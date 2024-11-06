@@ -6,10 +6,11 @@ import com.example.demo.exception.BusinessException;
 import com.example.demo.modelo.Materia;
 import com.example.demo.modelo.Professor;
 import com.example.demo.repository.MateriaRepository;
+import com.example.demo.repository.ProfessorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-
+import java.util.Set;
 
 
 @Service
@@ -17,19 +18,20 @@ import org.springframework.stereotype.Service;
 
 public class MateriaService {
     private final MateriaRepository materiaRepository;
-    private final ProfessorService professorService;
+    private final ProfessorRepository professorRepository;
 
     public Materia criar(Materia materia) {
-        if (materia.getProfessor() == null ) {
+        if (materia.getProfessor() == null) {
             throw new BusinessException("Professor é obrigatório para criar uma matéria.");
         }
-        System.out.println(professorService+"id do professor");
-        Professor professor = professorService.buscar(materia.getProfessor().getId());
+        System.out.println(materia.getProfessor().getId() + "id do professor");
+        Professor professor = professorRepository.findById(materia.getProfessor().getId())
+                .orElseThrow(() -> new BusinessException("Professor não encontrado."));
         if (professor == null) {
             throw new BusinessException("Professor não encontrado.");
         }
-        professor.getMaterias().add(materia);
-        professorService.atualizar(professor.getId(), professor);
+
+        System.out.println("☻" +materia);
         return materiaRepository.save(materia);
     }
 

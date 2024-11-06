@@ -144,23 +144,23 @@ public class MatriculaControllerTest {
                 .andExpect(status().isOk());
     }
 
-//    @Test
-//    void deveAtualizarMatricula() throws Exception {
-//        Matricula matricula = new Matricula(null, aluno, materia);
-//        matriculaRepository.save(matricula);
-//
-//        Aluno aluno = new Aluno(3L, "Maria", Set.of(matricula));
-//        alunoRepository.save(aluno);
-//
-//        matricula.setAluno(aluno);
-//
-//        String matriculaJson = objectMapper.writeValueAsString(matricula);
-//
-//        mockMvc.perform(MockMvcRequestBuilders.put("/api/matricula/" + matricula.getId())
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(matriculaJson));
-////                .andExpect(status().isOk())
-////                .andExpect(jsonPath("$.aluno.nome").value("Maria"));
-//    }
+    @Test
+    void deveAtualizarMatricula() throws Exception {
+        Matricula matricula = new Matricula(null, aluno, materia);
+        matriculaRepository.save(matricula);
+
+        Aluno aluno = new Aluno(3L, "Maria", Set.of(matricula));
+        alunoRepository.save(aluno);
+
+        matricula.setAluno(aluno);
+
+        String matriculaJson = objectMapper.writeValueAsString(matricula);
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/api/matricula/" + matricula.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(matriculaJson));
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.aluno.nome").value("Maria"));
+    }
 
 }

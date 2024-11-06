@@ -20,22 +20,29 @@ public class NotaService {
     private final ProfessorService professorService;
 
     public Nota lancarNota(Nota nota) {
+        if (nota.getValor()==null) {
+            throw new BusinessException("Nota é obrigatória");
+        }
         if (nota.getValor() < 0 || nota.getValor() > 10) {
             throw new BusinessException("Nota deve ser entre 0 e 10");
         }
+        if (nota.getMatricula() == null || nota.getMatricula().getId() == null) {
+            throw new BusinessException("Matricula é obrigatória");
+        }
         Matricula matricula = matriculaService.buscar(nota.getMatricula().getId());
+
         var professor = professorService.buscar(matricula.getMateria().getProfessor().getId());
 
         if (!professor.getId().equals(nota.getMatricula().getMateria().getProfessor().getId())) {
             throw new BusinessException("Professor não é responsável pela matéria da matrícula");
         }
 
-        Nota notaSalva = Nota.builder().matricula(nota.getMatricula()).valor(nota.getValor()).build();
+//        Nota notaSalva = Nota.builder().matricula(nota.getMatricula()).valor(nota.getValor()).build();
 
 
+//        System.out.println("??"+  notaRepository.save(nota));
 
-
-        return notaRepository.save(notaSalva);
+        return notaRepository.save(nota);
     }
 
     public Double calcularMedia(Long matriculaId) {

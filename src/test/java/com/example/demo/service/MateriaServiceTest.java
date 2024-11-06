@@ -6,18 +6,19 @@ import com.example.demo.modelo.Professor;
 import com.example.demo.repository.MateriaRepository;
 import com.example.demo.repository.ProfessorRepository;
 import com.example.demo.servico.MateriaService;
-import com.example.demo.servico.ProfessorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+
 
 class MateriaServiceTest {
 
@@ -30,55 +31,36 @@ class MateriaServiceTest {
     @InjectMocks
     private MateriaService materiaService;
 
-    @InjectMocks
-    private ProfessorService professorService;
-
     private Materia materia;
     private Professor professor;
 
-
     @BeforeEach
     void setup() {
+        MockitoAnnotations.openMocks(this);
         professor = new Professor(1L, "pedro", null);
-        materia = new Materia(null, "Matemática", professor,null);
-
+        materia = new Materia(null, "Matemática", professor, null);
 
         professor.setMaterias(Set.of(materia));
-        MockitoAnnotations.openMocks(this);
     }
 
     @Test
     void criarMateriaComSucesso() {
-        Materia materia = new Materia(null, "Matemática", new Professor(1L,"pedro",null),null);
+        when(professorRepository.findById(materia.getProfessor().getId())).thenReturn(Optional.of(professor));
         when(materiaRepository.save(materia)).thenReturn(materia);
-        when(professorRepository.save(professor)).thenReturn(professor);
-        when(materiaRepository.findById(materia.getId())).thenReturn(Optional.empty());
+        when(materiaRepository.findById(anyLong())).thenReturn(Optional.empty());
 
-        Professor savedProfessor = professorService.save(professor);
-        Materia savedMateria = materiaService.criar(materia);
+        System.out.println(materia.getProfessor() + "id do professor");
 
-        assertEquals(materia, savedMateria);
+        Materia materiaSalva = materiaService.criar(materia);
+
+        assertEquals(materia, materiaSalva);
         verify(materiaRepository).save(materia);
         verifyNoMoreInteractions(materiaRepository);
+        verify(professorRepository).findById(professor.getId());
     }
 
     @Test
-    void criarMateriaComNomeNulo() {
-        Materia materia = new Materia(null, null, null,null);
-        assertThrows(BusinessException.class, () -> materiaService.criar(materia));
-        verifyNoInteractions(materiaRepository);
-    }
-
-    @Test
-    void criarMateriaComNomeVazio() {
-        Materia materia = new Materia(null, "", null,null);
-        assertThrows(BusinessException.class, () -> materiaService.criar(materia));
-        verifyNoInteractions(materiaRepository);
-    }
-
-    @Test
-    void criarMateriaComProfessorNulo() {
-        Materia materia = new Materia(null, "Matemática", null,null);
+    void criarMateriaSemProfessor() {
         materia.setProfessor(null);
         assertThrows(BusinessException.class, () -> materiaService.criar(materia));
         verifyNoInteractions(materiaRepository);
@@ -86,13 +68,38 @@ class MateriaServiceTest {
 
     @Test
     void buscarMateriaPorId() {
-        Materia materia = new Materia(1L, "Matemática", null,null);
-        when(materiaRepository.findById(1L)).thenReturn(Optional.of(materia));
-
-        Materia materiaEncontrada = materiaService.findById(1L);
-
-        assertEquals(materia, materiaEncontrada);
-        verify(materiaRepository).findById(1L);
-        verifyNoMoreInteractions(materiaRepository);
+        when(materiaRepository.findById(materia.getId())).thenReturn(Optional.of(materia));
+        Materia materiaSalva = materiaService.findById(materia.getId());
+        assertEquals(materia, materiaSalva);
+        verify(materiaRepository).findById(materia.getId());
     }
+
+    @Test
+    void naoEncontrarMateriaPorId() {
+        when(materiaRepository.findById(materia.getId())).thenReturn(Optional.empty());
+        assertThrows(BusinessException.class, () -> materiaService.findById(materia.getId()));
+        verify(materiaRepository).findById(materia.getId());
+    }
+
+//    @Test
+//    void atualizarMateria() {
+//        Materia materiaSalva = new Materia(1L, "Matemática", professor, null);
+//        when(materiaRepository.findById(materia.getId())).thenReturn(Optional.of(materiaSalva));
+//        when(materiaRepository.save(materia)).thenReturn(materia);
+//
+//        Materia materiaAtualizada = materiaService.atualizar(materia.getId(), materia);
+//
+//        assertEquals(materia, materiaAtualizada);
+//        verify(materiaRepository).findById(materia.getId());
+//        verify(materiaRepository).save(materia);
+//    }
+
+    @Test
+    void deletarMateria() {
+        when(materiaRepository.findById(materia.getId())).thenReturn(Optional.of(materia));
+        materiaService.deletar(materia.getId());
+        verify(materiaRepository).delete(materia);
+    }
+
+
 }
