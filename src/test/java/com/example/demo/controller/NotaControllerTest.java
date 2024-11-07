@@ -160,7 +160,7 @@ public class NotaControllerTest {
         Nota nota = new Nota(null, matricula, 10.0);
         notaRepository.save(nota);
 
-     mockMvc.perform(get("/api/nota/nota/" + matricula.getId()))
+     mockMvc.perform(get("/api/nota/" + matricula.getId()))
                 .andExpect(status().isOk());
     }
 

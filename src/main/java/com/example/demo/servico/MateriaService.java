@@ -44,12 +44,20 @@ public class MateriaService {
     public Materia atualizar(Long id, Materia materia) {
         Materia materiaSalva = findById(id);
         materia.setId(materiaSalva.getId());
-        return materiaRepository.save(materia);
+        try {
+            return materiaRepository.save(materia);
+        } catch (Exception e) {
+            throw new BusinessException("Não foi possível atualizar a matéria");
+        }
     }
 
     public void deletar(Long id) {
         Materia materia = findById(id);
-        materiaRepository.delete(materia);
+        try {
+            materiaRepository.delete(materia);
+        } catch (Exception e) {
+            throw new BusinessException("Não é possível excluir a matéria");
+        }
     }
 
 

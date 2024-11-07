@@ -48,7 +48,7 @@ public class NotaController {
         }
     }
 
-    @GetMapping("/nota/{matriculaId}")
+    @GetMapping("/{matriculaId}")
     public ResponseEntity<List<Nota>> buscarNota(@PathVariable Long matriculaId) {
         try {
             return ResponseEntity.ok(notaService.buscarNota(matriculaId));

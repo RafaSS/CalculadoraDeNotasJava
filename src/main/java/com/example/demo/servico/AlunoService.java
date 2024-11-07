@@ -19,6 +19,7 @@ public class AlunoService {
     }
 
     public Aluno findById(Long id) {
+
         return alunoRepository.findById(id)
                 .orElseThrow(() -> new BusinessException("Aluno não encontrado"));
     }
@@ -26,11 +27,19 @@ public class AlunoService {
     public Aluno update(Long id, Aluno aluno) {
         Aluno alunoSalvo = findById(id);
         aluno.setId(alunoSalvo.getId());
-        return alunoRepository.save(aluno);
+       try {
+              return alunoRepository.save(aluno);
+         } catch (Exception e) {
+              throw new BusinessException("Não foi possível atualizar o aluno");
+       }
     }
 
     public void delete(Long id) {
         Aluno aluno = findById(id);
-        alunoRepository.delete(aluno);
+        try {
+            alunoRepository.delete(aluno);
+        } catch (Exception e) {
+            throw new BusinessException("Não é possível excluir o aluno");
+        }
     }
 }

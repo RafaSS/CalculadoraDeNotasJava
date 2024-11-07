@@ -61,6 +61,10 @@ public class MatriculaService {
 
     public void deletar(Long id) {
         Matricula matricula = buscar(id);
-        matriculaRepository.delete(matricula);
+        try {
+            matriculaRepository.delete(matricula);
+        } catch (Exception e) {
+            throw new BusinessException("Não é possível excluir a matricula");
+        }
     }
 }

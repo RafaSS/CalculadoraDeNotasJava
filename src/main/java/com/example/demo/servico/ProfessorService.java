@@ -26,11 +26,19 @@ public class ProfessorService {
     public Professor atualizar(Long id, Professor professor) {
         Professor professorSalvo = buscar(id);
         professor.setId(professorSalvo.getId());
-        return professorRepository.save(professor);
+        try {
+            return professorRepository.save(professor);
+        } catch (Exception e) {
+            throw new BusinessException("Não foi possível atualizar o professor");
+        }
     }
 
     public void deletar(Long id) {
         Professor professor = buscar(id);
-        professorRepository.delete(professor);
+        try {
+            professorRepository.delete(professor);
+        } catch (Exception e) {
+            throw new BusinessException("Não é possível excluir o professor");
+        }
     }
 }
