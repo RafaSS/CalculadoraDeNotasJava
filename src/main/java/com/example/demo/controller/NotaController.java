@@ -1,52 +1,78 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.NotaService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import com.example.demo.exception.BusinessException;
+import com.example.demo.modelo.Matricula;
+import com.example.demo.modelo.Nota;
+import com.example.demo.servico.NotaService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/aluno")
+@RequestMapping("/api/nota")
+@RequiredArgsConstructor
 public class NotaController {
 
-    @Autowired
-    private NotaService notaService;
+    private final NotaService notaService;
 
-    @PostMapping("/criar")
-    public ResponseEntity<String> criarAluno(@RequestParam String nome) {
-        notaService.criarAluno(nome);
-        return new ResponseEntity<>("Aluno " + nome + " criado com sucesso!", HttpStatus.CREATED);
-    }
+    @PostMapping("/lancar")
+    public ResponseEntity<Nota> lancarNota(
+            @RequestBody Nota nota) {
 
-    @PostMapping("/nota")
-    public ResponseEntity<String> adicionarNota(@RequestParam String nome, @RequestParam double nota) {
         try {
-            notaService.adicionarNota(nome, nota);
-            return new ResponseEntity<>("Nota adicionada com sucesso para o aluno " + nome, HttpStatus.OK);
-        } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return ResponseEntity.ok(notaService.lancarNota(nota));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 
-    @GetMapping("/media")
-    public ResponseEntity<String> calcularMedia(@RequestParam String nome) {
-        try {
-            double media = notaService.calcularMedia(nome);
-            return new ResponseEntity<>("A média do aluno " + nome + " é " + media, HttpStatus.OK);
-        } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    @GetMapping("/aprovacao/{matriculaId}")
+    public ResponseEntity<Boolean> verificarAprovacao(@PathVariable Long matriculaId) {
+        try{
+            return ResponseEntity.ok(notaService.verificarAprovacao(matriculaId));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 
-    @GetMapping("/status")
-    public ResponseEntity<String> verificarAprovacao(@RequestParam String nome) {
+
+
+    @GetMapping("/media/{matriculaId}")
+    public ResponseEntity<Double> calcularMedia(@PathVariable Long matriculaId) {
+        try{
+            return ResponseEntity.ok(notaService.calcularMedia(matriculaId));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @GetMapping("/nota/{matriculaId}")
+    public ResponseEntity<List<Nota>> buscarNota(@PathVariable Long matriculaId) {
         try {
-            boolean aprovado = notaService.foiAprovado(nome);
-            String mensagem = aprovado ? "Aluno " + nome + " aprovado!" : "Aluno " + nome + " reprovado!";
-            return new ResponseEntity<>(mensagem, HttpStatus.OK);
-        } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return ResponseEntity.ok(notaService.buscarNota(matriculaId));
+        } catch (BusinessException e) {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+    @PutMapping("/atualizar/{matriculaId}")
+    public ResponseEntity<Nota> atualizarNota(@PathVariable Long matriculaId, @RequestBody Nota nota) {
+        try {
+            return ResponseEntity.ok(notaService.atualizarNota(matriculaId, nota));
+        } catch (BusinessException e) {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+    @DeleteMapping("/deletar/{matriculaId}/{notaId}")
+    public ResponseEntity<Nota> deletarNota(@PathVariable Long matriculaId, @PathVariable Long notaId) {
+        try {
+            notaService.deletarNota(matriculaId, notaId);
+            return ResponseEntity.ok().build();
+        } catch (BusinessException e) {
+            return ResponseEntity.status(404).build();
         }
     }
 }
