@@ -40,7 +40,6 @@ public class NotaService {
 //        Nota notaSalva = Nota.builder().matricula(nota.getMatricula()).valor(nota.getValor()).build();
 
 
-//        System.out.println("??"+  notaRepository.save(nota));
 
         return notaRepository.save(nota);
     }

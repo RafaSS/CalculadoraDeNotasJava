@@ -32,7 +32,7 @@ class MatriculaServiceTest {
     private AlunoRepository alunoRepository;
 
     @Mock
-    private MateriaRepository  materiaRepository;
+    private MateriaRepository materiaRepository;
 
     @Mock
     private AlunoService alunoService;
@@ -63,7 +63,6 @@ class MatriculaServiceTest {
         when(alunoService.findById(any())).thenReturn(aluno);
         when(materiaService.findById(materia.getId())).thenReturn(materia);
         when(matriculaRepository.save(any(Matricula.class))).thenReturn(matricula);
-        System.out.println("🫡🫡"+ matricula.getMateria());
         Matricula matriculaSalva = matriculaService.matricular(matricula);
 
         assertEquals(matricula, matriculaSalva);

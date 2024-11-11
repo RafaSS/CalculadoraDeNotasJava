@@ -101,7 +101,6 @@ public class MatriculaControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/matricula/" + matricula.getId()))
                 .andExpect(status().isOk());
 
-        System.out.println(matriculaService.buscar(matricula.getId()) + "matriculaddd");
 
     }
 

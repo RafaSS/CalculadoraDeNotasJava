@@ -8,11 +8,12 @@ import com.example.demo.modelo.Professor;
 import com.example.demo.repository.MateriaRepository;
 import com.example.demo.repository.ProfessorRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
 
@@ -24,14 +25,14 @@ public class MateriaService {
         if (materia.getProfessor() == null) {
             throw new BusinessException("Professor é obrigatório para criar uma matéria.");
         }
-        System.out.println(materia.getProfessor().getId() + "id do professor");
+        log.debug("Professor: {}", materia.getProfessor());
         Professor professor = professorRepository.findById(materia.getProfessor().getId())
                 .orElseThrow(() -> new BusinessException("Professor não encontrado."));
         if (professor == null) {
             throw new BusinessException("Professor não encontrado.");
         }
 
-        System.out.println("☻" +materia);
+        materia.setProfessor(professor);
         return materiaRepository.save(materia);
     }
 
