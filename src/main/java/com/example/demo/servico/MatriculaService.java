@@ -6,11 +6,12 @@ import com.example.demo.modelo.Matricula;
 import com.example.demo.repository.MatriculaRepository;
 import com.example.demo.exception.BusinessException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MatriculaService {
@@ -24,9 +25,8 @@ public class MatriculaService {
         Aluno aluno = alunoService.findById(matricula.getAluno().getId());
 
         Materia materia = materiaService.findById(matricula.getMateria().getId());
-        System.out.println("😎"+materia );
-        System.out.println(aluno+"aluno1::");
-
+        log.debug("Aluno: {}", aluno);
+        log.debug("Materia: {}", materia);
 
 
 
@@ -43,7 +43,7 @@ public class MatriculaService {
 
     public Matricula atualizar(Long id, Matricula matricula) {
         Aluno aluno = alunoService.findById(matricula.getAluno().getId());
-        System.out.println(aluno+"aluno::");
+        log.debug("Aluno: {}", aluno);
         Materia materia = materiaService.findById(matricula.getMateria().getId());
 
         if(!matriculaRepository.existsById(id)) {
@@ -61,6 +61,10 @@ public class MatriculaService {
 
     public void deletar(Long id) {
         Matricula matricula = buscar(id);
-        matriculaRepository.delete(matricula);
+        try {
+            matriculaRepository.delete(matricula);
+        } catch (Exception e) {
+            throw new BusinessException("Não é possível excluir a matricula");
+        }
     }
 }

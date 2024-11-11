@@ -49,7 +49,6 @@ class MateriaServiceTest {
         when(materiaRepository.save(materia)).thenReturn(materia);
         when(materiaRepository.findById(anyLong())).thenReturn(Optional.empty());
 
-        System.out.println(materia.getProfessor() + "id do professor");
 
         Materia materiaSalva = materiaService.criar(materia);
 
