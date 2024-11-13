@@ -17,11 +17,11 @@ public class Matricula {
     private Long id;
 
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne( cascade = CascadeType.MERGE)
     @JoinColumn(name = "aluno_id")
     private Aluno aluno;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne( cascade = CascadeType.MERGE)
     @JoinColumn(name = "materia_id")
     private Materia materia;
 

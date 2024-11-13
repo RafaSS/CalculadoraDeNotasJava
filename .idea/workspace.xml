@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="513bdfd7-3782-405d-92a4-7c4af0f6abbe" name="Changes" comment="creat tests">
+    <list default="true" id="513bdfd7-3782-405d-92a4-7c4af0f6abbe" name="Changes" comment="add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Matricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/modelo/Matricula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,78 +87,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.AlunoControllerTest.criarAlunoComSucesso.executor": "Run",
-    "JUnit.AlunoControllerTest.deveAtualizarAluno.executor": "Run",
-    "JUnit.AlunoControllerTest.deveCriarAluno.executor": "Run",
-    "JUnit.MateriaControllerTest.deveAtualizarMateria.executor": "Run",
-    "JUnit.MateriaControllerTest.deveBuscarMateria.executor": "Run",
-    "JUnit.MateriaControllerTest.deveCriarMateria.executor": "Run",
-    "JUnit.MateriaControllerTest.deveDeletarMateria.executor": "Run",
-    "JUnit.MateriaControllerTest.deveRetornarBadRequestAoCriarMateriaComProfessorInexistente.executor": "Debug",
-    "JUnit.MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente.executor": "Run",
-    "JUnit.MateriaServiceTest.buscarMateriaPorId.executor": "Run",
-    "JUnit.MateriaServiceTest.criarMateriaComSucesso.executor": "Run",
-    "JUnit.MateriaServiceTest.executor": "Run",
-    "JUnit.MatriculaControllerTest.deveAtualizarMatricula.executor": "Run",
-    "JUnit.MatriculaControllerTest.deveCriarMatricula.executor": "Run",
-    "JUnit.MatriculaServiceTest.executor": "Run",
-    "JUnit.MatriculaServiceTest.matricularComSucesso.executor": "Run",
-    "JUnit.NotaControllerTest.deveAtualizarNota.executor": "Run",
-    "JUnit.NotaControllerTest.deveBuscarNota.executor": "Run",
-    "JUnit.NotaControllerTest.deveCalcularMedia.executor": "Run",
-    "JUnit.NotaControllerTest.deveCriarNota.executor": "Run",
-    "JUnit.NotaControllerTest.deveDeletarNota.executor": "Run",
-    "JUnit.NotaControllerTest.deveRetornarBadRequest.executor": "Run",
-    "JUnit.NotaControllerTest.deveRetornarBadRequestNotaInvalida.executor": "Run",
-    "JUnit.NotaControllerTest.deveVerificarAprovacao.executor": "Run",
-    "JUnit.NotaControllerTest.deveVerificarReprovacao.executor": "Run",
-    "JUnit.NotaControllerTest.executor": "Run",
-    "JUnit.NotaServiceTest.criarNotaComMatriculaNula.executor": "Run",
-    "JUnit.NotaServiceTest.criarNotaComSucesso.executor": "Run",
-    "JUnit.NotaServiceTest.executor": "Run",
-    "JUnit.ProfessorControllerTest.deveAtualizarProfessor.executor": "Run",
-    "JUnit.ProfessorControllerTest.deveBuscarProfessor.executor": "Run",
-    "JUnit.ProfessorControllerTest.deveCriarProfessor.executor": "Run",
-    "JUnit.ProfessorControllerTest.deveCriarProfessorComMaterias.executor": "Run",
-    "JUnit.ProfessorServiceTest.criarProfessorComMateria.executor": "Run",
-    "JUnit.ProfessorServiceTest.criarProfessorComNomeNulo.executor": "Run",
-    "JUnit.ProfessorServiceTest.criarProfessorComSucesso.executor": "Run",
-    "Maven.demo [clean].executor": "Run",
-    "Maven.demo [compile].executor": "Run",
-    "Maven.demo [deploy].executor": "Run",
-    "Maven.demo [install].executor": "Run",
-    "Maven.demo [org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile].executor": "Run",
-    "Maven.demo [org.apache.maven.plugins:maven-install-plugin:3.1.3:install].executor": "Run",
-    "Maven.demo [org.apache.maven.plugins:maven-jar-plugin:3.4.2:help].executor": "Run",
-    "Maven.demo [org.apache.maven.plugins:maven-jar-plugin:3.4.2:jar].executor": "Run",
-    "Maven.demo [package].executor": "Run",
-    "Maven.demo [test].executor": "Run",
-    "Maven.projeto01 [clean].executor": "Run",
-    "Maven.projeto01 [compile].executor": "Run",
-    "Maven.projeto01 [deploy].executor": "Run",
-    "Maven.projeto01 [install].executor": "Run",
-    "Maven.projeto01 [verify].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DemoApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/admin/IdeaProjects/projeto01/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AlunoControllerTest.criarAlunoComSucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AlunoControllerTest.deveAtualizarAluno.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AlunoControllerTest.deveCriarAluno.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaControllerTest.deveAtualizarMateria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaControllerTest.deveBuscarMateria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaControllerTest.deveCriarMateria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaControllerTest.deveDeletarMateria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaControllerTest.deveRetornarBadRequestAoCriarMateriaComProfessorInexistente.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.MateriaControllerTest.deveRetornarNotFoundAoBuscarMateriaInexistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaServiceTest.buscarMateriaPorId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaServiceTest.criarMateriaComSucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MateriaServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MatriculaControllerTest.deveAtualizarMatricula.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MatriculaControllerTest.deveCriarMatricula.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MatriculaServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MatriculaServiceTest.matricularComSucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveAtualizarNota.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveBuscarNota.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveCalcularMedia.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveCriarNota.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveDeletarNota.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveRetornarBadRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveRetornarBadRequestNotaInvalida.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveVerificarAprovacao.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.deveVerificarReprovacao.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaServiceTest.criarNotaComMatriculaNula.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaServiceTest.criarNotaComSucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotaServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorControllerTest.deveAtualizarProfessor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorControllerTest.deveBuscarProfessor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorControllerTest.deveCriarProfessor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorControllerTest.deveCriarProfessorComMaterias.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorServiceTest.criarProfessorComMateria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorServiceTest.criarProfessorComNomeNulo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfessorServiceTest.criarProfessorComSucesso.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [org.apache.maven.plugins:maven-install-plugin:3.1.3:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [org.apache.maven.plugins:maven-jar-plugin:3.4.2:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [org.apache.maven.plugins:maven-jar-plugin:3.4.2:jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.projeto01 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.projeto01 [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.projeto01 [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.projeto01 [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.projeto01 [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/admin/IdeaProjects/projeto01/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\IdeaProjects\projeto01\src\main\java" />
@@ -294,7 +294,17 @@
       <workItem from="1730890658850" duration="6768000" />
       <workItem from="1730909327752" duration="12635000" />
       <workItem from="1731322670629" duration="644000" />
+      <workItem from="1731340568715" duration="1320000" />
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <option name="closed" value="true" />
+      <created>1731331676482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731331676482</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +353,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -357,7 +371,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/servico/MatriculaService.java</url>
-          <line>32</line>
+          <line>30</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

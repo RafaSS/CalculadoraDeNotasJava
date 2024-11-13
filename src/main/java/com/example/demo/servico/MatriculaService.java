@@ -25,8 +25,6 @@ public class MatriculaService {
         Aluno aluno = alunoService.findById(matricula.getAluno().getId());
 
         Materia materia = materiaService.findById(matricula.getMateria().getId());
-        log.debug("Aluno: {}", aluno);
-        log.debug("Materia: {}", materia);
 
 
 
